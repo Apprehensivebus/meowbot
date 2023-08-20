@@ -55,9 +55,7 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 				message.channel:send('No problem~')
 		end
 		
-		if message.content:lower() == ':pleading_face:' then -- simple 1:1 match of message, using lower for case insensitivity
-			message.channel:send('Use your words girl I don\'t speak bottom')
-		end
+
 		-- end general cutesy stuff
 
 		-- begin anarchychess memes
