@@ -3,40 +3,67 @@ local dcmd = require("discordia-slash")
 local client = discordia.Client()
 -- Import stuffs
 
-catchat='1128642529127051284' -- the channel she's supposed to be in, should make this persistent
+catchat={}
+catchat[0]='1'
+catchat[1]='1128642529127051284'
+--catchat[1142469992617627713]={1} -- the channel she's supposed to be in, should make this persistent
 catmin='1107394188208783502' -- my discord for owner only commands
-lock=1 -- defaults to locked 
+
+function table.contains(table, element)
+	for _, value in pairs(table) do
+	  if value == element then
+		return true
+	  end
+	end
+	return false
+  end
+
+
+
 
 client:on('ready', function()
 	print('Logged in as '.. client.user.username) -- for troubleshooting
 end)
 
 client:on('messageCreate', function(message)	-- on message
-	if message.channel.id ~= catchat then		-- if not in current channel
-		if message.content:lower() == 'come over here catgirl' and lock==0 then
-				message.channel:send('Okay, moving to this channel')
-				catchat=message.channel.id		-- move over
+	if not table.contains(catchat,message.channel.id) and message.author.id == catmin then		-- if not in current channel
+		if message.content:lower() == 'come over here catgirl'  then
+				message.channel:send('Okay, joining to this channel :smile:')
 				print('Moved to '.. message.channel.id)
+				table.insert(catchat,message.channel.id)		-- move over
+				print('aaah')
 		end
 	end
 end)
 
 
 
+
 client:on('messageCreate', function(message)	-- listening block for everything in her channels
 	if message.author.bot then return end		-- so she doesn't talk to herself or other bots
-	if message.channel.id == catchat or message.channel.id =='1142469992617627713' then	-- check for channel
-		print(message.channel.id)
-		if message.content:lower() == 'stay here catgirl' and lock==0 then	-- to lock her in place, only owner can move her
-				message.channel:send('Okay, I won\'t move out of this channel unless Sasha tells me to :pensive:')
-				lock=1
-				print('Locked channel to '.. message.channel.id)
+	if table.contains(catchat,message.channel.id) then	-- check for channel
+		
+
+		if message.content:lower() == 'how many channels are you in catgirl'  then
+			message.channel:send('I am currently in '.. table.getn(catchat)..' channels!')
 		end
 
-		if message.content:lower() == 'you can move again catgirl' and message.author.id == catmin then	-- only owner can unlock
-			message.channel:send('Okay, I can move again :smile:')
-			lock=0
-			print('Unlocked channel from '.. message.channel.id)
+		if message.content:lower() == 'leave this channel catgirl'  then
+			message.channel:send('Okay, leaving this channel, bye bye :pensive:')
+			local ids = {} -- table containing ids to remove
+			for i,v in ipairs(catchat) do
+  			if v == message.channel.id then
+    			table.insert(ids, 1, i) -- "1" preprends the value
+			end
+			end
+
+			-- At this point, "ids" contains all the ids to remove in the reverse order
+
+			for k,v in ipairs(ids) do
+  			table.remove(catchat, v)
+			end
+
+			print('Moved out of '.. message.channel.id)
 		end
 
 		-- begin general cutesy stuff
