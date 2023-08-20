@@ -1,4 +1,5 @@
 local discordia = require('discordia')
+local dcmd = require("discordia-slash")
 local client = discordia.Client()
 -- Import stuffs
 
@@ -24,8 +25,8 @@ end)
 
 client:on('messageCreate', function(message)	-- listening block for everything in her channels
 	if message.author.bot then return end		-- so she doesn't talk to herself or other bots
-	if message.channel.id == catchat or '1142469992617627713' then	-- check for channel
-	
+	if message.channel.id == catchat or message.channel.id =='1142469992617627713' then	-- check for channel
+		print(message.channel.id)
 		if message.content:lower() == 'stay here catgirl' and lock==0 then	-- to lock her in place, only owner can move her
 				message.channel:send('Okay, I won\'t move out of this channel unless Sasha tells me to :pensive:')
 				lock=1
@@ -54,8 +55,6 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 		if string.find(message.content:lower(),'thank you') and string.find(message.content:lower(),'catgirl') then -- mesage much contain both in any order
 				message.channel:send('No problem~')
 		end
-		
-
 		-- end general cutesy stuff
 
 		-- begin anarchychess memes
@@ -83,7 +82,16 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			message.channel:send('Cuddle storm incoming! :exploding_head:')
 		end
 		-- end anarchychess memes
-		
+
+		-- begin edit test
+		if message.content:lower() == 'catgirl, send and remember' then
+			testms=message.channel:send('Okay, sent a message!' )
+		end
+
+		if message.content:lower() == 'catgirl, edit' then
+			testms:setContent('Okay, made it gayer :rainbow_flag:' )
+		end
+		-- end edit test
 
 	end
 end)
