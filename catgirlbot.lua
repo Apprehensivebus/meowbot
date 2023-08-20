@@ -55,6 +55,12 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 		if string.find(message.content:lower(),'thank you') and string.find(message.content:lower(),'catgirl') then -- mesage much contain both in any order
 				message.channel:send('No problem~')
 		end
+
+		if string.find(message.content:lower(),'be gay') then 
+			message.channel:send('Do crime :sunglasses:')
+		end
+
+
 		-- end general cutesy stuff
 
 		-- begin anarchychess memes
