@@ -6,6 +6,7 @@ local client = discordia.Client()
 catchat={}
 catchat[0]='1'
 catchat[1]='1128642529127051284'
+cece=5
 --catchat[1142469992617627713]={1} -- the channel she's supposed to be in, should make this persistent
 catmin='1107394188208783502' -- my discord for owner only commands
 
@@ -129,6 +130,18 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			testms:setContent('Okay, made it gayer :rainbow_flag:' )
 		end
 		-- end edit test
+
+		-- céleste
+		if message.author.username == 'citrus_scoundrel' then
+			if cece==10 then
+				message.channel:send('slut detected')
+				cece=0
+				print('reset cece to'..cece)
+			else
+				cece=cece+1
+			end
+		end
+
 
 	end
 end)
