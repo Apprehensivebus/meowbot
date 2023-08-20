@@ -87,6 +87,10 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			message.channel:send('Do crime :sunglasses:')
 		end
 
+		if string.find(message.content:lower(),'not cute') then -- mesage much contain both in any order
+			message.channel:send('Girl, I know the saying is girlboss gatekeep gaslight but can you stop lying to me for one second???')
+		end
+
 
 		-- end general cutesy stuff
 
