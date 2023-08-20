@@ -1,0 +1,74 @@
+2023-08-19 21:26:44 | [INFO]    | Discordia 2.11.2
+2023-08-19 21:26:44 | [INFO]    | Connecting to Discord...
+2023-08-19 21:26:44 | [INFO]    | Authenticated as Actual Catgirl#3036
+2023-08-19 21:26:44 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-19 21:26:44 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 21:26:44 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 21:26:45 | [INFO]    | Shard 0 : Received READY
+2023-08-19 21:28:44 | [WARNING] | Shard 0 : Unhandled gateway event: CHANNEL_TOPIC_UPDATE
+2023-08-19 21:28:44 | [WARNING] | Shard 0 : Unhandled gateway event: VOICE_CHANNEL_STATUS_UPDATE
+2023-08-19 21:30:50 | [WARNING] | Shard 0 : Unhandled gateway event: CHANNEL_TOPIC_UPDATE
+2023-08-19 21:30:50 | [WARNING] | Shard 0 : Unhandled gateway event: VOICE_CHANNEL_STATUS_UPDATE
+2023-08-19 21:35:42 | [WARNING] | Shard 0 : Unhandled gateway event: CHANNEL_TOPIC_UPDATE
+2023-08-19 21:35:42 | [WARNING] | Shard 0 : Unhandled gateway event: VOICE_CHANNEL_STATUS_UPDATE
+2023-08-19 22:18:37 | [INFO]    | Discordia 2.11.2
+2023-08-19 22:18:37 | [INFO]    | Connecting to Discord...
+2023-08-19 22:18:37 | [INFO]    | Authenticated as Actual Catgirl#3036
+2023-08-19 22:18:37 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-19 22:18:37 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 22:18:37 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 22:18:37 | [INFO]    | Shard 0 : Received READY
+2023-08-19 22:26:52 | [INFO]    | Discordia 2.11.2
+2023-08-19 22:26:52 | [INFO]    | Connecting to Discord...
+2023-08-19 22:26:52 | [INFO]    | Authenticated as Actual Catgirl#3036
+2023-08-19 22:26:53 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-19 22:26:53 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 22:26:53 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 22:26:53 | [INFO]    | Shard 0 : Received READY
+2023-08-19 22:35:29 | [INFO]    | Discordia 2.11.2
+2023-08-19 22:35:29 | [INFO]    | Connecting to Discord...
+2023-08-19 22:35:29 | [INFO]    | Authenticated as Actual Catgirl#3036
+2023-08-19 22:35:29 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-19 22:35:29 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 22:35:29 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 22:35:29 | [INFO]    | Shard 0 : Received READY
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Discord has requested a reconnection
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Disconnected
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Reconnecting...
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 22:52:14 | [INFO]    | Shard 0 : Received RESUMED
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Discord has requested a reconnection
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Disconnected
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Reconnecting...
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 23:28:00 | [INFO]    | Shard 0 : Received RESUMED
+2023-08-19 23:35:11 | [INFO]    | Discordia 2.11.2
+2023-08-19 23:35:11 | [INFO]    | Connecting to Discord...
+2023-08-19 23:35:11 | [INFO]    | Authenticated as Catgirl bot#3036
+2023-08-19 23:35:11 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-19 23:35:12 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-19 23:35:12 | [INFO]    | Shard 0 : Received HELLO
+2023-08-19 23:35:12 | [INFO]    | Shard 0 : Received READY
+2023-08-20 00:02:16 | [INFO]    | Discordia 2.11.2
+2023-08-20 00:02:16 | [INFO]    | Connecting to Discord...
+2023-08-20 00:02:16 | [INFO]    | Authenticated as Catgirl bot#3036
+2023-08-20 00:02:16 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-20 00:02:17 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-20 00:02:17 | [INFO]    | Shard 0 : Received HELLO
+2023-08-20 00:02:17 | [INFO]    | Shard 0 : Received READY
+2023-08-20 00:04:19 | [INFO]    | Discordia 2.11.2
+2023-08-20 00:04:19 | [INFO]    | Connecting to Discord...
+2023-08-20 00:04:19 | [INFO]    | Authenticated as Catgirl bot#3036
+2023-08-20 00:04:19 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-20 00:04:19 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-20 00:04:19 | [INFO]    | Shard 0 : Received HELLO
+2023-08-20 00:04:19 | [INFO]    | Shard 0 : Received READY
+2023-08-20 00:05:37 | [INFO]    | Discordia 2.11.2
+2023-08-20 00:05:37 | [INFO]    | Connecting to Discord...
+2023-08-20 00:05:37 | [INFO]    | Authenticated as Catgirl bot#3036
+2023-08-20 00:05:37 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-08-20 00:05:37 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-08-20 00:05:37 | [INFO]    | Shard 0 : Received HELLO
+2023-08-20 00:05:37 | [INFO]    | Shard 0 : Received READY
