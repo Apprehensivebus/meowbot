@@ -97,12 +97,17 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			message.channel:send('Do crime :sunglasses:')
 		end
 
-		if string.find(message.content:lower(),'not cute') then -- mesage much contain
+		if string.find(message.content:lower(),'m not cute') then -- mesage much contain
 			message.channel:send('Girl, I know the saying is girlboss gatekeep gaslight but can you stop lying to me for one second???')
 		end
 
 		if string.find(message.content:lower(),'launch codes') then -- Sadie's thing
 			message.channel:send('`This message was removed for potential violation of national security`')
+		end
+
+		if string.find(message.content:lower(),'catgirl') and string.find(message.content:lower(),'source') then -- mesage much contain both in any order
+			message.channel:send('Of course! here it is:')
+			message.channel:send('https://github.com/Apprehensivebus/meowbot')
 		end
 
 
