@@ -1,6 +1,7 @@
 local discordia = require('discordia')
 local dcmd = require("discordia-slash")
 local client = discordia.Client()
+local timer = require('timer')
 -- Import stuffs
 
 catchat={}
@@ -12,13 +13,19 @@ catmin='1107394188208783502' -- my discord for owner only commands
 
 function table.contains(table, element)
 	for _, value in pairs(table) do
-	  if value == element then
-		return true
-	  end
+		if value == element then
+			return true
+		end
 	end
 	return false
-  end
+end
 
+function meow(channel,target, time)
+	timer.sleep(time*1000)
+	print('meow')
+	channel:send('meow '..target.mentionString)
+	return coroutine.yield(1)
+end
 
 
 
@@ -139,6 +146,17 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 				print('reset cece to'..cece)
 			else
 				cece=cece+1
+			end
+		end
+
+		-- begin meow test
+		if string.find(string.lower(message.content:sub(1,14)),'meow at me in ') then
+			if tonumber(message.content:sub(15,24)) then
+				ti=tonumber(message.content:sub(15,24))
+				message.channel:send('Okay, I\'ll meow at you in '..ti..' seconds')
+				coroutine.resume(coroutine.create(meow(message.channel,message.author,ti)))
+			else 
+				message.channel:send('Sorry, but '..message.content:sub(15,24)..' is not a number')
 			end
 		end
 
