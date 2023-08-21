@@ -29,7 +29,40 @@ function meow(channel,target, time) -- for meow timer
 	return coroutine.yield(1) -- so lua stops yelling at me
 end
 
-
+-- treasure hunt originally by verysmollgecko
+function treasurehunt(message)
+	local ym={} ym['north']=1 ym['west']=0 ym['east']=0 ym['south']=-1 -- the change in y for each direction
+	local xm={} xm['north']=0 xm['west']=-1 xm['east']=1 xm['south']=0 -- the change in x for each direction
+	math.randomseed(os.time())
+	message.channel:send('Treasure hunting time!\n Original credit to verysmollgecko!! \n\n(use **north,south,east,west** to move!) NOW FIND IT!! :3\n--------')
+	local tx = math.random(1,10) --generates treasure place
+	local ty = math.random(1,10)
+	local px = math.random(1,10) --generates player place
+	local py = math.random(1,10)
+	if tx == px then
+		tx = math.random(1,10) --regenerates treasureif it's in line with player starting coordinates
+	end
+	if ty == py then
+		ty = math.random(1,10)
+	end
+	local mess=message.channel:send('Your starting coordinates are: *('..px..','..py..')*\n---\nYou`re **'..math.abs(px - tx) + math.abs(py - ty)..'** spaces away :3') --gives player their coordinates and how many spaces they are removed from the treasure
+	local a=1
+	while a do
+		client:on('messageCreate',function(msg)
+			if msg.channel==mess.channel and (msg.content == 'north' or msg.content == 'south' or msg.content =='west' or msg.content =='east') then
+				px = px + xm[msg.content]
+				py = py + ym[msg.content] --moves player 1 place in the right direction
+				mess:setContent('You moved **1** space '..msg.content..'!\nYour coordinates are: *('..px..','..py..')*\n---\nYou`re **'..math.abs(px - tx) + math.abs(py - ty)..'** spaces away! :3')
+				if tx == px and ty==py then
+					msg.channel:send('-----\n\n**You found my treasure!!** AAARRRRRRGGGHH!!!!\nGood job tho :3 *headpat*') --winning message
+					a=0
+				end
+			msg:delete()
+			end
+		end)
+return coroutine.yield(1)
+end
+end
 
 client:on('ready', function()
 	print('Logged in as '.. client.user.username) -- for troubleshooting
@@ -163,6 +196,11 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			end
 		end
 		-- end meow timer
+
+		if message.content:lower() == 'treasure hunt' then
+			print('a')
+			coroutine.resume(coroutine.create(treasurehunt(message)))
+		end
 
 	end
 end)
