@@ -21,8 +21,10 @@ function table.contains(table, element)
 end
 
 function meow(channel,target, time)
+	print('Meowing at '..target.username..' in '..time ..' seconds at '..os.date())
+	local a=os.time()
 	timer.sleep(time*1000)
-	print('meow')
+	print('Meowed at '..target.username..' after '..os.difftime(os.time(),a)..' seconds at '..os.date())
 	channel:send('meow '..target.mentionString)
 	return coroutine.yield(1)
 end
@@ -153,6 +155,7 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 		if string.find(string.lower(message.content:sub(1,14)),'meow at me in ') then
 			if tonumber(message.content:sub(15,24)) then
 				ti=tonumber(message.content:sub(15,24))
+				if ti<0 then message.channel:send('Sorry, but I\'m a catgirl not a time traveller, I can\'t meow in the past!') return end
 				message.channel:send('Okay, I\'ll meow at you in '..ti..' seconds')
 				if ti>1000 then message.channel:send('Keep in mind I do get lobotomised (restarted) often so long timers may get lost in the void ^_^') end
 				coroutine.resume(coroutine.create(meow(message.channel,message.author,ti)))
