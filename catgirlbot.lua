@@ -20,13 +20,13 @@ function table.contains(table, element)
 	return false
 end
 
-function meow(channel,target, time)
-	print('Meowing at '..target.username..' in '..time ..' seconds at '..os.date())
-	local a=os.time()
-	timer.sleep(time*1000)
-	print('Meowed at '..target.username..' after '..os.difftime(os.time(),a)..' seconds at '..os.date())
-	channel:send('meow '..target.mentionString)
-	return coroutine.yield(1)
+function meow(channel,target, time) -- for meow timer
+	print('Meowing at '..target.username..' in '..time ..' seconds at '..os.date()) -- debug
+	local a=os.time() -- for debug
+	timer.sleep(time*1000) -- set timer for amount of seconds
+	print('Meowed at '..target.username..' after '..os.difftime(os.time(),a)..' seconds at '..os.date()) -- debug
+	channel:send('meow '..target.mentionString) -- meow at person
+	return coroutine.yield(1) -- so lua stops yelling at me
 end
 
 
@@ -97,8 +97,12 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			message.channel:send('Do crime :sunglasses:')
 		end
 
-		if string.find(message.content:lower(),'not cute') then -- mesage much contain both in any order
+		if string.find(message.content:lower(),'not cute') then -- mesage much contain
 			message.channel:send('Girl, I know the saying is girlboss gatekeep gaslight but can you stop lying to me for one second???')
+		end
+
+		if string.find(message.content:lower(),'launch codes') then -- Sadie's thing
+			message.channel:send('`This message was removed for potential violation of national security`')
 		end
 
 
@@ -150,8 +154,9 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 				cece=cece+1
 			end
 		end
+		-- end céleste
 
-		-- begin meow test
+		-- begin meow timer
 		if string.find(string.lower(message.content:sub(1,14)),'meow at me in ') then
 			if tonumber(message.content:sub(15,24)) then
 				ti=tonumber(message.content:sub(15,24))
@@ -163,7 +168,7 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 				message.channel:send('Sorry, but '..message.content:sub(15,24)..' is not a number')
 			end
 		end
-
+		-- end meow timer
 
 	end
 end)
