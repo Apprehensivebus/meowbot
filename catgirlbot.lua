@@ -154,6 +154,7 @@ client:on('messageCreate', function(message)	-- listening block for everything i
 			if tonumber(message.content:sub(15,24)) then
 				ti=tonumber(message.content:sub(15,24))
 				message.channel:send('Okay, I\'ll meow at you in '..ti..' seconds')
+				if ti>1000 then message.channel:send('Keep in mind I do get lobotomised (restarted) often so long timers may get lost in the void ^_^') end
 				coroutine.resume(coroutine.create(meow(message.channel,message.author,ti)))
 			else 
 				message.channel:send('Sorry, but '..message.content:sub(15,24)..' is not a number')
