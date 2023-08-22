@@ -1,5 +1,4 @@
 local discordia = require('discordia')
-local dcmd = require("discordia-slash")
 local client = discordia.Client()
 local timer = require('timer')
 -- Import stuffs
